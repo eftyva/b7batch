@@ -8,9 +8,33 @@ namespace Task3
 {
     public class PrimeFinder
     {
-        public int[] GetPrimes(int lowerValue, int upperValue)
+        public int[] GetPrimes(int l, int u)
         {
-            throw new NotImplementedException();
+            int number, i, x, j = 0;
+
+            int[] counts = new int[u];
+
+            for (number = l; number <= u; number++)
+            {
+                x = 0;
+
+                for (i = 2; i <= number / 2; i++)
+                {
+                    if (number % i == 0)
+                    {
+                        x++;
+                        break;
+                    }
+                }
+
+                if (x == 0 && number != 1)
+                {
+
+                    counts[j] = number;
+                    j++;
+                }
+            }
+            return counts;
         }
     }
 }
